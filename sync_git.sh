@@ -19,3 +19,5 @@ if [ -f $MYGITIGNORE ]; then
 else
     printf "${MYGITIGNORE} not found. \n\n";
 fi
+
+git config --global core.excludesfile '~/.gitignore_global'
