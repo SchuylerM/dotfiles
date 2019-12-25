@@ -5,3 +5,4 @@ export EDITOR=vim
 alias reload='source ~/.bashrc'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+alias python='python3'
