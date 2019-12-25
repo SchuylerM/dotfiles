@@ -1,9 +1,6 @@
-" source /apollo/env/envImprovement/var/vimrc
-
-au BufNewFile,BufRead *.gradle setf groovy
-
 " prefer shorter tabs
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2
+set shiftwidth=2
 
 " display current file being edited
 set laststatus=2
@@ -61,8 +58,5 @@ endtry
 
 set background=dark
 
-" auto remove trailing whitspace everything you do a write command :w
-autocmd BufWritePre *.py :%s/\s\+$//e
-
-
+set expandtab
 
