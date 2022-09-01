@@ -6,6 +6,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-commentary'
+  Plug 'vim-airline/vim-airline'
   Plug 'Yggdroot/indentLine'
 call plug#end()
 
@@ -21,9 +23,6 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp
 " Set leader character
 let mapleader = "\<Space>"
 
-" Formatted paste into the editor
-set paste
-
 if has('mouse')
     set mouse=a
 endif
@@ -37,6 +36,16 @@ syntax on
 set spell spelllang=en_us
 set spellfile=~/.config/nvim/spell/en.utf-8.add
 
+set bg=dark
+let g:gruvbox_italic=1
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_invert_signs=1
+colorscheme gruvbox
+
+" Override background colors so our transprency doesn't look off
+highlight Normal guibg=none ctermbg=none
+highlight Search cterm=underline
+
 if has('gui_running')
     set guifont=Input:h10
     set guioptions=
@@ -48,6 +57,7 @@ set backspace=indent,eol,start
 " Enable indenting
 filetype indent plugin on
 set autoindent
+
 
 set hlsearch
 
@@ -120,16 +130,21 @@ noremap <silent> <leader>p "*p
 noremap <leader>w :w<CR>
 noremap <leader>W :wq!<CR>
 
-autocmd Filetype go setlocal ts=4 sw=4 sts=4 noexpandtab
-autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType eyaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType c setlocal ts=4 sts=4 sw=4 expandtab
-autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv']
-autocmd BufNewFile,BufRead *.pp set syntax=ruby
-autocmd BufNewFile,BufRead *.eyaml set ft=yaml
-autocmd BufNewFile,BufRead Dockerfile.* set ft=dockerfile
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+" prefer shorter tabs
+set tabstop=2
+set shiftwidth=2
+
+" TODO: this might be causing issues
+" autocmd Filetype go setlocal ts=4 sw=4 sts=4 noexpandtab
+" autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+" autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" autocmd FileType eyaml setlocal ts=2 sts=2 sw=2 expandtab
+" autocmd FileType c setlocal ts=4 sts=4 sw=4 expandtab
+" autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv']
+" autocmd BufNewFile,BufRead *.pp set syntax=ruby
+" autocmd BufNewFile,BufRead *.eyaml set ft=yaml
+" autocmd BufNewFile,BufRead Dockerfile.* set ft=dockerfile
+" autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Window sizing
 set equalalways
@@ -151,7 +166,7 @@ nmap <c-t> :vs<bar>:b#<CR>
 
 " COC Stuff
 " Load some extensions
-let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-pyright', 'coc-yaml']
+let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-pyright', 'coc-yaml', 'coc-python', 'coc-java', 'coc-clangd']
 
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -213,7 +228,8 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" TODO
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -222,13 +238,14 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+" TODO: maybe undo?
+" augroup mygroup
+"   autocmd!
+"   " Setup formatexpr specified filetype(s).
+"   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+"   " Update signature help on jump placeholder
+"   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+" augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -358,4 +375,3 @@ command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-

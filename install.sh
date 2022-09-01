@@ -13,14 +13,26 @@ if ! [ -x "$(command -v pip)" ]; then
   sudo python3 /tmp/get-pip.py
 fi
 
-# Django
-sudo python3 -m pip install Django
+# The basics
+sudo apt install -y vim neovim tmux
 
-# MariaDB
-# From https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&distro_release=stretch--stretch&mirror=mva&version=10.4
-sudo apt-get install software-properties-common dirmngr -y
-sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
-sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.mva-n.net/mariadb/repo/10.4/debian stretch main'
+# Stuff for vim plug
+sudo apt-get install fuse libfuse2 git python3-pip ack-grep -y
 
-sudo apt-get update
-sudo apt-get install mariadb-server -y
+# curl
+sudo apt-get install curl -y
+
+# Vim plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ 
+# Node needed for coc
+# sudo apt install nodejs -y
+# Node usually gets an old crap version, so use npm to install maybe?
+sudo apt install npm -y
+sudo npm install -g n
+sudo n lts
+
+# ripgrep needed for fzf in nvim
+sudo apt-get install ripgrep -y
+
+sudo apt install default-jdk -y 
