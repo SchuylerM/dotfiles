@@ -24,10 +24,6 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp
 " Set leader character
 let mapleader = "\<Space>"
 
-if has('mouse')
-    set mouse=a
-endif
-
 set termguicolors
 
 " Turn on syntax hilighting

@@ -38,4 +38,7 @@ sudo n lts
 # ripgrep needed for fzf in nvim
 sudo apt-get install ripgrep -y
 
-sudo apt install default-jdk -y 
+# install java
+curl https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.deb -o /tmp/jdk-18_linux-x64_bin.deb
+sudo apt install -y /tmp/jdk-18_linux-x64_bin.deb
+
