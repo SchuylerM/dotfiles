@@ -16,6 +16,9 @@ fi
 # The basics
 sudo apt install -y vim neovim tmux
 
+# Get tmux plugin
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Stuff for vim plug
 sudo apt-get install fuse libfuse2 git python3-pip ack-grep -y
 
