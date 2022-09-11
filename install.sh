@@ -42,3 +42,5 @@ sudo apt-get install ripgrep -y
 curl https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.deb -o /tmp/jdk-18_linux-x64_bin.deb
 sudo apt install -y /tmp/jdk-18_linux-x64_bin.deb
 
+# python stuff
+sudo app install python3.10-venv -y

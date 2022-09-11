@@ -180,7 +180,7 @@ nmap <c-t> :vs<bar>:b#<CR>
 
 " COC Stuff
 " Load some extensions
-let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-pyright', 'coc-yaml', 'coc-python', 'coc-java', 'coc-clangd']
+let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-pyright', 'coc-yaml', 'coc-pyright', 'coc-java', 'coc-clangd']
 
 " if hidden is not set, TextEdit might fail.
 set hidden
