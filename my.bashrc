@@ -12,7 +12,7 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
-
+alias python=python3
 #!/bin/bash
 iatest=$(expr index "$-" i)
 

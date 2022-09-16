@@ -135,7 +135,7 @@ set matchtime=100
 
 set nowrap
 
-noremap <silent> <leader>t :FZF<CR>
+noremap <silent> <leader>t :GFiles<CR>
 noremap <silent> <leader>r :FZF<CR>
 noremap <silent> <leader>r :Rg<CR>
 noremap <silent> <leader>y "*y
