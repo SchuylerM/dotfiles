@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
   Plug 'Yggdroot/indentLine'
+	Plug 'bazelbuild/vim-ft-bzl'
 	" Plug 'nvim-treesitter/nvim-treesitter', { 'do': { ':TSUpdate' }
 call plug#end()
 
@@ -135,6 +136,7 @@ set matchtime=100
 
 set nowrap
 
+noremap <silent> <leader>g :FZF<CR>
 noremap <silent> <leader>t :GFiles<CR>
 noremap <silent> <leader>r :FZF<CR>
 noremap <silent> <leader>r :Rg<CR>
@@ -201,10 +203,10 @@ set shortmess+=c
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1

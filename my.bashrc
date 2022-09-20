@@ -3,6 +3,7 @@ export EDITOR=nvim
 
 export JAVA_HOME=/usr/lib/jvm/jdk-18
 export PATH=$JAVA_HOME/bin:$PATH
+export CC=gcc
 
 # TODO(schuyler): move aliases to their own dotfile
 alias reload='source ~/.bashrc'

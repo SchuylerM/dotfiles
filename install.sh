@@ -44,3 +44,15 @@ sudo apt install -y /tmp/jdk-18_linux-x64_bin.deb
 
 # python stuff
 sudo app install python3.10-venv -y
+sudo ln -s /usr/bin/python3 /usr/bin/python
+
+# bazel stuff
+sudo apt install apt-transport-https curl gnupg -y
+curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-archive-keyring.gpg
+sudo mv bazel-archive-keyring.gpg /usr/share/keyrings
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/bazel-archive-keyring.gpg] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+sudo apt update && sudo apt install bazel -y
+
+# gcc/c++ stuff
+sudo apt install build-essential -y
+
