@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'Yggdroot/indentLine'
 	Plug 'bazelbuild/vim-ft-bzl'
+	Plug 'vim-autoformat/vim-autoformat'
 	" Plug 'nvim-treesitter/nvim-treesitter', { 'do': { ':TSUpdate' }
 call plug#end()
 
@@ -394,3 +395,10 @@ command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+" autoformat stuff
+let g:formatters_python = ['isort', 'black']
+noremap <F3> :Autoformat<CR>
+let g:autoformat_verbosemode=1
+" OR:
+let verbose=1

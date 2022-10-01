@@ -45,6 +45,8 @@ sudo apt install -y /tmp/jdk-18_linux-x64_bin.deb
 # python stuff
 sudo app install python3.10-venv -y
 sudo ln -s /usr/bin/python3 /usr/bin/python
+# python formatting stuff
+sudo pip install black isort
 
 # bazel stuff
 sudo apt install apt-transport-https curl gnupg -y
