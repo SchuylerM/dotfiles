@@ -4,6 +4,9 @@ MYVIM="$(dirname "$(realpath "$0")")/my.vimrc"
 MYNVIM="$(dirname "$(realpath "$0")")/init.vim"
 MYCOCSETTINGS="$(dirname "$(realpath "$0")")/coc-settings.json"
 
+# Make sure dir exists
+mkdir -p ~/.config/nvim
+
 if [ -f $MYVIM ]; then
     cp $MYVIM ~/.vimrc;
     printf "Successfully copied\n  \"${MYVIM}\"  \n to \n  \"~/.vimrc\" \n\n";
