@@ -1,0 +1,88 @@
+:set all
+--- Options ---
+  aleph=224         nobinary              colorcolumn=      nocursorbind        noerrorbells          foldmethod=manual   hlsearch            langmap=            matchtime=100       numberwidth=4       prompt              scroll=44           showbreak=          splitbelow          tagstack          noundofile            winaltkeys=menu     writedelay=0
+noarabic            nobomb                columns=363       nocursorcolumn        eventignore=        foldminlines=1    noicon                langmenu=           maxcombine=6        omnifunc=           pumheight=0         scrollback=-1       showcmd             splitright        notermbidi            undolevels=1000     winblend=0
+  arabicshape       nobreakindent         commentstring=#%s   cursorline        noexpandtab           foldnestmax=20      iconstring=         langnoremap         maxfuncdepth=100    operatorfunc=       pumblend=0        noscrollbind        noshowfulltag         startofline         termguicolors       undoreload=10000    winhighlight=
+noallowrevins         breakindentopt=   nocompatible          debug=            noexrc                formatexpr=         ignorecase        nolangremap           maxmapdepth=1000  nopaste               pyxversion=0        scrolljump=1      noshowmatch           suffixesadd=      noterse               updatecount=200     window=89
+  ambiwidth=single    bufhidden=          concealcursor=inc nodelcombine          fileformat=unix     formatprg=          iminsert=0          laststatus=2        menuitems=25        pastetoggle=        quoteescape=\       scrolloff=0         showmode            swapfile            textwidth=0         updatetime=4000     winheight=1
+noautochdir           buflisted           conceallevel=2      dictionary=       nofileignorecase    nofsync               imsearch=-1       nolazyredraw          modeline            patchexpr=        noreadonly          nosecure              showtabline=1       switchbuf=          thesaurus=          verbose=0         nowinfixheight
+  autoindent          buftype=            completefunc=     nodiff                filetype=sh       nogdefault            inccommand=       nolinebreak         nomodelineexpr        patchmode=          redrawdebug=        selectmode=         sidescroll=1        synmaxcol=3000    notildeop             verbosefile=      nowinfixwidth
+  autoread            cdpath=,,         noconfirm             diffexpr=           fillchars=          guifont=            includeexpr=        lines=90            modelines=5       nopreserveindent      redrawtime=2000     shadafile=          sidescrolloff=0     syntax=sh           timeout             virtualedit=        winminheight=1
+noautowrite           cedit=^F          nocopyindent        nodigraph             fixendofline        guifontset=         incsearch           linespace=0         modifiable          previewheight=12    regexpengine=0      shell=/bin/bash     signcolumn=auto     tabline=            timeoutlen=100    novisualbell          winminwidth=1
+noautowriteall        channel=0           cscopepathcomp=0    eadirection=both    foldclose=          guifontwide=      noinfercase         nolisp              nomodified          nopreviewwindow     norelativenumber      shellcmdflag=-c     smartcase           tabpagemax=50     notitle               warn                winwidth=110
+  background=dark     charconvert=        cscopeprg=cscope  noedcompatible        foldcolumn=0        helpheight=20     noinsertmode        nolist                more                printdevice=        remap               shellquote=       nosmartindent         tabstop=2           titlelen=85         whichwrap=b,s     nowrap
+nobackup            nocindent             cscopequickfix=     emoji               foldenable          helplang=en         isprint=@,161-255   loadplugins         mouse=              printencoding=      report=2            shelltemp           smarttab            tagbsearch          titleold=           wildchar=<Tab>      wrapmargin=0
+  backupcopy=auto     cinoptions=       nocscoperelative      encoding=utf-8      foldexpr=0        nohidden              joinspaces          magic               mousemodel=extend   printfont=courier norevins              shellxquote=        softtabstop=0       tagcase=followic    titlestring=        wildcharm=0         wrapscan
+  backupext=~         clipboard=        nocscopetag           endofline           foldignore=#        history=10000       keymap=             makeef=             mousetime=500       printmbcharset=   norightleft           shellxescape=       spell               taglength=0         ttimeout          nowildignorecase      write
+  backupskip=/tmp/*   cmdheight=1         cscopetagorder=0    equalalways         foldlevel=0       nohkmap               keymodel=           makeencoding=       nrformats=bin,hex   printmbfont=        ruler             noshiftround          spelllang=en_us     tagrelative         ttimeoutlen=50      wildmenu          nowriteany
+  belloff=all         cmdwinheight=7      cscopeverbose       equalprg=           foldlevelstart=-1 nohkmapp              keywordprg=:Man     makeprg=make        number              printoptions=       rulerformat=        shiftwidth=2        spellsuggest=best   tags=./tags;,tags   ttyfast             wildmode=full       writebackup
+  backspace=indent,eol,start
+  backupdir=.,~/.local/share/nvim/backup
+  breakat= ^I!@*-+;:,./?
+  casemap=internal,keepascii
+  cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+  cinwords=if,else,while,do,for,switch
+  comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+  complete=.,w,b,u,t
+  completeopt=menu,preview
+  cpoptions=aABceFs_
+  define=^\s*#\s*define
+  diffopt=internal,filler
+  directory=~/.local/share/nvim/swap//
+  display=lastline,msgsep
+  errorfile=errors.err
+  errorformat=%*[^"]"%f"%*\D%l: %m,"%f"%*\D%l: %m,%-G%f:%l: (Each undeclared identifier is reported only once,%-G%f:%l: for each function it appears in.),%-GIn file included from %f:%l:%c:,%-GIn file included from %f:%l:%c\,,%-GIn file included from %f:%l:%c,%-GIn file included from %f:%l,%-G%*[ ]from %f:%l:%c,%-G%*[ ]from %f:%l:,%-G%*[ ]from %f:%l\,,%-G%*[ ]fr
+om %f:%l,%f:%l:%c:%m,%f(%l):%m,%f:%l:%m,"%f"\, line %l%*\D%c%*[^ ] %m,%D%*\a[%*\d]: Entering directory %*[`']%f',%X%*\a[%*\d]: Leaving directory %*[`']%f',%D%*\a: Entering directory %*[`']%f',%X%*\a: Leaving directory %*[`']%f',%DMaking %*\a in %f,%f|%l| %m
+  fileencoding=utf-8
+  fileencodings=ucs-bom,utf-8,default,latin1
+  fileformats=unix,dos
+  foldmarker={{{,}}}
+  foldopen=block,hor,mark,percent,quickfix,search,tag,undo
+  foldtext=foldtext()
+  formatoptions=tcqj
+  formatlistpat=^\s*\d\+[\]:.)}\t ]\s*
+  grepformat=%f:%l:%c:%m
+  grepprg=rg --color=never
+  guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
+  helpfile=/usr/share/nvim/runtime/doc/help.txt
+  highlight=8:SpecialKey,~:EndOfBuffer,z:TermCursor,Z:TermCursorNC,@:NonText,d:Directory,e:ErrorMsg,i:IncSearch,l:Search,m:MoreMsg,M:ModeMsg,n:LineNr,N:CursorLineNr,r:Question,s:StatusLine,S:StatusLineNC,c:VertSplit,t:Title,v:Visual,V:VisualNOS,w:WarningMsg,W:WildMenu,f:Folded,F:FoldColumn,A:DiffAdd,C:DiffChange,D:DiffDelete,T:DiffText,>:SignColumn,-:Conceal,B:
+SpellBad,P:SpellCap,R:SpellRare,L:SpellLocal,+:Pmenu,=:PmenuSel,x:PmenuSbar,X:PmenuThumb,*:TabLine,#:TabLineSel,_:TabLineFill,!:CursorColumn,.:CursorLine,o:ColorColumn,q:QuickFixLine,0:Whitespace,I:NormalNC
+  include=^\s*#\s*include
+  indentexpr=GetShIndent()
+  indentkeys=0{,0},0),0],!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+  isfname=@,48-57,/,.,-,_,+,,,#,$,%,~,=
+  isident=@,48-57,_,192-255
+  iskeyword=@,48-57,_,192-255
+  lispwords=defun,define,defmacro,set!,lambda,if,case,let,flet,let*,letrec,do,do*,define-syntax,let-syntax,letrec-syntax,destructuring-bind,defpackage,defparameter,defstruct,deftype,defvar,do-all-symbols,do-external-symbols,do-symbols,dolist,dotimes,ecase,etypecase,eval-when,labels,macrolet,multiple-value-bind,multiple-value-call,multiple-value-prog1,multiple-v
+alue-setq,prog1,progv,typecase,unless,unwind-protect,when,with-input-from-string,with-open-file,with-open-stream,with-output-to-string,with-package-iterator,define-condition,handler-bind,handler-case,restart-bind,restart-case,with-simple-restart,store-value,use-value,muffle-warning,abort,continue,with-slots,with-slots*,with-accessors,with-accessors*,defclass,de
+fmethod,print-unreadable-object
+  listchars=tab:>-,trail:�,eol:$
+  matchpairs=(:),{:},[:]
+  maxmempattern=1000
+  mkspellmem=460000,2000,500
+  packpath=~/.config/nvim,/etc/xdg/nvim,~/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/usr/share/nvim/runtime,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,~/.local/share/nvim/site/after,/etc/xdg/nvim/after,~/.config/nvim/after
+  paragraphs=IPLPPPQPP TPHPLIPpLpItpplpipbp
+  path=.,/usr/include,,
+  printexpr=system(['lpr'] + (empty(&printdevice)?[]:['-P', &printdevice]) + [v:fname_in]). delete(v:fname_in)+ v:shell_error
+  printheader=%<%f%h%m%=Page %N
+  rightleftcmd=search
+  runtimepath=~/.config/nvim,~/.vim/plugged/vim-gitgutter,~/.vim/plugged/vim-tmux-navigator,~/.vim/plugged/gruvbox,~/.vim/plugged/fzf,~/.vim/plugged/fzf.vim,~/.vim/plugged/vim-fugitive,~/.vim/plugged/vim-commentary,~/.vim/plugged/vim-airline,~/.vim/plugged/indentLine,~/.vim/plugged/vim-ft-bzl,~/.vim/plugged/vim-autoformat,/etc/xdg/nvim,~/.local/share/nvim/site,
+/usr/local/share/nvim/site,/usr/share/nvim/site,/usr/share/nvim/runtime,/usr/share/nvim/runtime/pack/dist/opt/matchit,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,~/.local/share/nvim/site/after,/etc/xdg/nvim/after,~/.vim/plugged/indentLine/after,~/.config/nvim/after
+  scrollopt=ver,jump
+  sections=SHNHH HUnhsh
+  selection=inclusive
+  sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
+  shada=!,'100,<50,s10,h
+  shellpipe=2>&1| tee
+  shellredir=>%s 2>&1
+  shortmess=filnxtToOF
+  spellcapcheck=[.?!]\_[\])'"^I ]\+
+  spellfile=~/.config/nvim/spell/en.utf-8.add
+  statusline=%!airline#statusline(1)
+  suffixes=.bak,~,.o,.h,.info,.swp,.obj
+  undodir=~/.local/share/nvim/undo
+  viewdir=~/.local/share/nvim/view
+  viewoptions=folds,options,cursor,curdir
+  wildignore=*/.git/*,*/tmp/*,*.swp
+  wildoptions=pum,tagfile
+
