@@ -1,5 +1,5 @@
 
-export EDITOR=nvim
+export EDITOR=vim
 
 export JAVA_HOME=/usr/lib/jvm/jdk-18
 export PATH=$JAVA_HOME/bin:$PATH
@@ -718,3 +718,7 @@ function __setprompt
 PROMPT_COMMAND='__setprompt'
 
 complete -C /usr/bin/terraform terraform
+
+# Hishtory Config:
+export PATH="$PATH:/home/schuyler/.hishtory"
+source /home/schuyler/.hishtory/config.sh
