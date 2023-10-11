@@ -58,3 +58,6 @@ sudo apt update && sudo apt install bazel -y
 # gcc/c++ stuff
 sudo apt install build-essential -y
 
+# AWS stuff
+sudo apt install awscli -y
+
