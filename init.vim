@@ -26,7 +26,8 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp
 " Set leader character
 let mapleader = "\<Space>"
 
-set termguicolors
+"
+"set termguicolors
 
 " Turn on syntax hilighting
 syntax on
