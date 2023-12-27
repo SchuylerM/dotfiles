@@ -33,8 +33,8 @@ let mapleader = "\<Space>"
 syntax on
 
 " Enable spell checking
-set spell spelllang=en_us
-set spellfile=~/.config/nvim/spell/en.utf-8.add
+"set spell spelllang=en_us
+"set spellfile=~/.config/nvim/spell/en.utf-8.add
 
 set bg=dark
 
