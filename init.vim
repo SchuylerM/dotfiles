@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'morhetz/gruvbox'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -11,6 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Yggdroot/indentLine'
 	Plug 'bazelbuild/vim-ft-bzl'
 	Plug 'vim-autoformat/vim-autoformat'
+	Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 	" Plug 'nvim-treesitter/nvim-treesitter', { 'do': { ':TSUpdate' }
 call plug#end()
 
@@ -36,10 +36,6 @@ set spell spelllang=en_us
 set spellfile=~/.config/nvim/spell/en.utf-8.add
 
 set bg=dark
-let g:gruvbox_italic=1
-let g:gruvbox_italicize_comments=1
-let g:gruvbox_invert_signs=1
-colorscheme gruvbox
 
 " treesitter config
 " lua <<EOF
@@ -321,16 +317,8 @@ nmap <c-t> :vs<bar>:b#<CR>
 "let g:indentLine_setConceal = 0
 "
 "" Less obnoxious error/hint hilighting
-"highlight! link CocErrorSign GruvboxRed
-"highlight! link CocWarningSign GruvboxYellow
-" highlight link CocInfoSign
-" highlight link CocHintSIgn
 
 " GitGutter config
-highlight! link GitGutterAdd GruvboxGreen
-highlight! link GitGutterChange GruvboxAqua
-highlight! link GitGutterDelete GruvboxRed
-highlight! link GitGutterChangeDelete GruvboxAqua
 let g:gitgutter_sign_added = "+"
 let g:gitgutter_sign_modified = "~"
 let g:gitgutter_sign_modified_removed = "~-"
