@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'bazelbuild/vim-ft-bzl'
 	Plug 'vim-autoformat/vim-autoformat'
 	Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+	Plug 'psf/black', { 'branch': 'stable' }
 	" Plug 'nvim-treesitter/nvim-treesitter', { 'do': { ':TSUpdate' }
 call plug#end()
 
@@ -22,6 +23,11 @@ if executable('rg')
 endif
 
 set wildignore+=*/.git/*,*/tmp/*,*.swp
+
+augroup black_on_save
+  autocmd!
+  autocmd BufWritePre *.py Black
+augroup end
 
 " Set leader character
 let mapleader = "\<Space>"
@@ -55,9 +61,9 @@ set bg=dark
 " }
 " EOF
 
-" Override background colors so our transprency doesn't look off
-highlight Normal guibg=none ctermbg=none
-highlight Search cterm=underline
+" Oerride background colors so our transprency doesn't look off
+" highlight Normal guibg=none ctermbg=none
+" highlight Search cterm=underline
 
 if has('gui_running')
     set guifont=Input:h10
