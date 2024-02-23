@@ -44,6 +44,10 @@ syntax on
 
 set bg=dark
 
+" Want them files auto updating
+set autoread
+au CursorHold * checktime
+
 " treesitter config
 " lua <<EOF
 " require'nvim-treesitter.configs'.setup {
