@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-autoformat/vim-autoformat'
 	Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 	Plug 'psf/black', { 'branch': 'stable' }
+	Plug 'darrikonn/vim-gofmt'
 	" Plug 'nvim-treesitter/nvim-treesitter', { 'do': { ':TSUpdate' }
 call plug#end()
 
@@ -28,6 +29,10 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp
 augroup black_on_save
   autocmd!
   autocmd BufWritePre *.py Black
+augroup end
+augroup gofmt_on_save
+  autocmd!
+  autocmd BufWritePre *.go GoFmt
 augroup end
 
 " Set leader character
@@ -48,7 +53,8 @@ set bg=dark
 " Want them files auto updating
 set autoread
 au CursorHold * checktime
-
+au WinEnter * checktime
+au BufWinEnter * checktime
 " treesitter config
 " lua <<EOF
 " require'nvim-treesitter.configs'.setup {
