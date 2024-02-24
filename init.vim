@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+	Plug 'flazz/vim-colorschemes'  " Example to install a bunch of color schemes
 	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-commentary'
@@ -31,7 +32,7 @@ augroup end
 
 " Set leader character
 let mapleader = "\<Space>"
-
+colorscheme gruvbox
 "
 "set termguicolors
 
