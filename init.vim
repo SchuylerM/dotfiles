@@ -35,6 +35,8 @@ augroup gofmt_on_save
   autocmd BufWritePre *.go GoFmt
 augroup end
 
+" Make arrow keys work like you are used to them working.
+set whichwrap+=<,>,[,],h,l
 " Set leader character
 let mapleader = "\<Space>"
 colorscheme gruvbox
@@ -119,7 +121,7 @@ set statusline +=%1*%4v\ %*             "virtual column number
 set statusline +=%2*0x%04B\ %*          "character under cursor
 
 " Shorten the timout time for key combinations
-set timeoutlen=100
+"set timeoutlen=100
 
 " Remap  lkj to <Esc> in most modes
 nmap <silent> lkj <Esc>
@@ -358,7 +360,7 @@ let g:cpp_class_decl_highlight = 1
 let g:fzf_layout = { 'window': '50new' }
 " let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+let $FZF_DEFAULT_COMMAND="rg --files"
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
