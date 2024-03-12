@@ -1,6 +1,8 @@
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'christoomey/vim-tmux-navigator'
+	Plug 'scrooloose/nerdcommenter'
+	Plug 'rhysd/vim-clang-format'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 	Plug 'flazz/vim-colorschemes'  " Example to install a bunch of color schemes
@@ -24,8 +26,11 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
+nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
+
 set wildignore+=*/.git/*,*/tmp/*,*.swp
 
+" On save formatters
 augroup black_on_save
   autocmd!
   autocmd BufWritePre *.py Black
@@ -34,6 +39,11 @@ augroup gofmt_on_save
   autocmd!
   autocmd BufWritePre *.go GoFmt
 augroup end
+augroup clang_proto_on_save
+  autocmd!
+  autocmd BufWritePre *.proto ClangFormat
+augroup end
+
 
 " Make arrow keys work like you are used to them working.
 set whichwrap+=<,>,[,],h,l

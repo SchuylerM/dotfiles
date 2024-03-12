@@ -3,6 +3,7 @@ export EDITOR=vim
 
 export JAVA_HOME=/usr/lib/jvm/jdk-18
 export PATH=$JAVA_HOME/bin:$PATH
+export PATH="$PATH:/usr/local/go/bin"
 export CC=gcc
 
 # TODO(schuyler): move aliases to their own dotfile
